@@ -3,10 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/pereirke/Documents/si15/projet/app/config/routing.yml</file>
+            <file>file:/home/pereirke/Documents/si15/projet/src/sil18/VitrineBundle/Resources/public/bootstrap-3.3.7-dist/css/bootstrap.css</file>
+            <file>file:/home/pereirke/Documents/si15/projet/src/sil18/VitrineBundle/Resources/config/doctrine/CategorieArticle.orm.yml</file>
+            <file>file:/home/pereirke/Documents/si15/projet/src/sil18/VitrineBundle/Resources/config/doctrine/Article.orm.yml</file>
+            <file>file:/home/pereirke/Documents/si15/projet/src/sil18/VitrineBundle/Resources/views/layout.html.twig</file>
             <file>file:/home/pereirke/Documents/si15/projet/src/sil18/VitrineBundle/Controller/DefaultController.php</file>
+            <file>file:/home/pereirke/Documents/si15/projet/src/sil18/VitrineBundle/Resources/config/services.yml</file>
+            <file>file:/home/pereirke/Documents/si15/projet/src/sil18/VitrineBundle/Entity/CategorieArticle.php</file>
             <file>file:/home/pereirke/Documents/si15/projet/src/sil18/VitrineBundle/Resources/config/routing.yml</file>
+            <file>file:/home/pereirke/Documents/si15/projet/src/sil18/VitrineBundle/Resources/views/Default/index.html.twig</file>
             <file>file:/home/pereirke/Documents/si15/projet/app/config/parameters.yml</file>
+            <file>file:/home/pereirke/Documents/si15/projet/src/sil18/VitrineBundle/Resources/views/Default/mentions.html.twig</file>
         </group>
     </open-files>
 </project-private>

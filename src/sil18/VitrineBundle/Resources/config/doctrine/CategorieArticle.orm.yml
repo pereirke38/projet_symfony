@@ -1,0 +1,11 @@
+sil18\VitrineBundle\Entity\CategorieArticle:
+    type: entity
+    table: categorieArticle
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name: 
+            type: string
+            length: 100

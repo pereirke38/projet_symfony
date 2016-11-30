@@ -115,8 +115,13 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // accueil
-        if (0 === strpos($pathinfo, '/accueil') && preg_match('#^/accueil(?:/(?P<name>[^/]++))?$#s', $pathinfo, $matches)) {
+        if (0 === strpos($pathinfo, '/acceuil') && preg_match('#^/acceuil(?:/(?P<name>[^/]++))?$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'accueil')), array (  '_controller' => 'sil18\\VitrineBundle\\Controller\\DefaultController::indexAction',  'name' => 'visiteur',));
+        }
+
+        // mentions
+        if ($pathinfo === '/mentions') {
+            return array (  '_controller' => 'sil18\\VitrineBundle\\Controller\\DefaultController::mentionsAction',  '_route' => 'mentions',);
         }
 
         // homepage

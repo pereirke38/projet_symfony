@@ -11,4 +11,8 @@ class DefaultController extends Controller
         return $this->render('sil18VitrineBundle:Default:index.html.twig',
                 array('name' => $name));
     }
+    
+    public function mentionsAction() {
+        return $this->render('sil18VitrineBundle:Default:mentions.html.twig');
+    }
 }

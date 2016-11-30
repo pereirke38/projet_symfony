@@ -3,5 +3,9 @@ sil18_vitrine_homepage:
     defaults: { _controller: sil18VitrineBundle:Default:index }
 
 accueil:
-    path:     /accueil/{name}
+    path:     /acceuil/{name}
     defaults: { _controller: sil18VitrineBundle:Default:index, name: visiteur }
+    
+mentions:
+    path:     /mentions
+    defaults: { _controller: sil18VitrineBundle:Default:mentions }
