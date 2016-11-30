@@ -1,0 +1,7 @@
+sil18_vitrine_homepage:
+    path:     /
+    defaults: { _controller: sil18VitrineBundle:Default:index }
+
+accueil:
+    path:     /accueil/{name}
+    defaults: { _controller: sil18VitrineBundle:Default:index, name: visiteur }
