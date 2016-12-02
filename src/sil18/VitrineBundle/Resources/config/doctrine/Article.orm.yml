@@ -1,6 +1,6 @@
-sil18\VitrineBundle\Entity\CategorieArticle:
+sil18\VitrineBundle\Entity\Article:
     type: entity
-    table: categorieArticle
+    table: article
     id:
         id:
             type: integer
@@ -17,7 +17,11 @@ sil18\VitrineBundle\Entity\CategorieArticle:
         stock:
             type: integer
         
-        manyToOne:
-            categorie:
-                targetEntity
+    manyToOne:
+        categorieArticle:
+            targetEntity: CategorieArticle
+            inversedBy: articles
+            joinColumn:
+                name: categorie_id
+                referencedColumnName: id
 

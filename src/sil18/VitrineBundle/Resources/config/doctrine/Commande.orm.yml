@@ -1,0 +1,29 @@
+sil18\VitrineBundle\Entity\Commande:
+    type: entity
+    table: commande
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        dateCommande: 
+            type: date
+        
+        valilde:
+            type: boolean
+            length: 100
+        
+    manyToOne:
+        client:
+            targetEntity: Client
+            inversedBy: commandes
+            joinColumn:
+                name: client_id
+                referencedColumn: id
+                
+    oneToMany:
+        ligneCommandes:
+            targetEntity: LigneCommande
+            mappedBy: commande
+            
+            

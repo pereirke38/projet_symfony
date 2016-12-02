@@ -9,3 +9,8 @@ sil18\VitrineBundle\Entity\CategorieArticle:
         name: 
             type: string
             length: 100
+    
+    oneToMany:
+        articles:
+            targetEntity: Article
+            mappedBy: categorieArticle

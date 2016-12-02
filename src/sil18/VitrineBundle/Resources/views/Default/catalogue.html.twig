@@ -1,0 +1,6 @@
+{% extends "sil18VitrineBundle::layout.html.twig" %}
+{% block content %}
+    {% for categorie in catalogue %}
+        <a href="{{ path('articlesParCategorie',{'categorie_id':categorie.id}) }}">{{ categorie.name }}</a>
+    {% endfor %}
+{% endblock %}

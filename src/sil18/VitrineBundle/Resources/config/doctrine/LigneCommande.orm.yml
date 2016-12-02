@@ -1,0 +1,29 @@
+sil18\VitrineBundle\Entity\LigneCommande:
+    type: entity
+    table: ligneCommande
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        prix_article:
+            type: integer
+            
+        quantite:
+            type: integer
+    
+    manyToOne:
+        commande:
+            targetEntity: Commande
+            inversedBy: ligneCommandes
+            joinColumn:
+                name: commande_id
+                referencedColumn: id
+        
+        article:
+            targetEntity: Article
+            inversedBy: ligneCommandes
+            joinColumn:
+                name: article_id
+                referencedColumn: id
+            

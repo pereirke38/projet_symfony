@@ -9,3 +9,11 @@ accueil:
 mentions:
     path:     /mentions
     defaults: { _controller: sil18VitrineBundle:Default:mentions }
+    
+catalogue:
+    path:   /catalogue
+    defaults: { _controller: sil18VitrineBundle:Default:catalogue }
+    
+articlesParCategorie:
+    path:   /articlesParCategorie/{categorie_id}
+    defaults:   { _controller: sil18VitrineBundle:Default:articlesParCategorie, categorie_id: categorie_id }

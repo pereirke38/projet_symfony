@@ -1,0 +1,17 @@
+{% extends "sil18VitrineBundle::layout.html.twig" %}
+{% block content %}
+    <table class='table table-hover'>
+        <tr>
+            <th>Name</th>
+            <th>Prix</th>
+            <th>Stocks</th>
+        </tr>
+    {% for article in articles %}
+        <tr>
+            <td>{{ article.name }}</td>
+            <td>{{ article.price }}</td>
+            <td>{{ article.stock }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
