@@ -1,3 +1,11 @@
+sil18_vitrine_commande:
+    resource: "@sil18VitrineBundle/Resources/config/routing/commande.yml"
+    prefix: /commande
+
+sil18_vitrine_client:
+    resource: "@sil18VitrineBundle/Resources/config/routing/client.yml"
+    prefix:   /client
+
 sil18_vitrine_homepage:
     path:     /
     defaults: { _controller: sil18VitrineBundle:Default:index }
@@ -17,3 +25,19 @@ catalogue:
 articlesParCategorie:
     path:   /articlesParCategorie/{categorie_id}
     defaults:   { _controller: sil18VitrineBundle:Default:articlesParCategorie, categorie_id: categorie_id }
+    
+contenuPanier:
+    path: /contenuPanier
+    defaults: { _controller: sil18VitrineBundle:Panier:contenuPanier }
+    
+ajoutArticle:
+    path: /ajoutArticle/{id}
+    defaults: { _controller: sil18VitrineBundle:Panier:ajoutArticle }
+    
+viderPanier:
+    path: /viderPanier
+    defaults: { _controller: sil18VitrineBundle:Panier:viderPanier }
+    
+validationPanier:
+    path: /validationPanier
+    defaults: { _controller: sil18VitrineBundle:Panier:validationPanier }

@@ -22,17 +22,17 @@ class Panier {
     }
     
     public function getContenu() {
-        return $contenu;
+        return $this->contenu;
     }
     
     public function ajoutArticle($articleId, $qte = 1) {
     // Ajout de l'article d'id $articleId au contenu, en quantitée qte
     // (vérifier si l'article n'existe pas déja)
-        if(in_array($articleId,$contenu)) {
-            $contenu[$articleId] = $qte++;
+        if(array_key_exists($articleId,$this->contenu)) {
+            $this->contenu[$articleId]++;
         }
         else {
-            $contenu[$articleId] = $qte;
+            $this->contenu[$articleId] = $qte;
         }
        
     }
@@ -40,11 +40,14 @@ class Panier {
     public function supprimerArticle($articleId) {
     // Supprimer l'article d'id $articleId du contenu
         if(in_array($article,$contenu) && $contenu[$articleId] != 0) {
-            
+            unset($contenu[$articleId]);
         }
     }
     
     public function viderPanier() {
     // Vide le contenu
+       if(count($this->getContenu())!=0) {
+           $this->contenu = array();
+       }
     }
 }

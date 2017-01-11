@@ -20,7 +20,7 @@ class Article
     private $name;
 
     /**
-     * @var string
+     * @var integer
      */
     private $price;
 
@@ -61,7 +61,7 @@ class Article
     /**
      * Get name
      *
-     * @return string 
+     * @return integer 
      */
     public function getName()
     {
@@ -71,7 +71,7 @@ class Article
     /**
      * Set price
      *
-     * @param string $price
+     * @param integer $price
      * @return Article
      */
     public function setPrice($price)

@@ -108,4 +108,53 @@ class Commande
     {
         return $this->client;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $ligneCommandes;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->ligneCommandes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add ligneCommandes
+     *
+     * @param \sil18\VitrineBundle\Entity\LigneCommande $ligneCommandes
+     * @return Commande
+     */
+    public function addLigneCommande(\sil18\VitrineBundle\Entity\LigneCommande $ligneCommandes)
+    {
+        $this->ligneCommandes[] = $ligneCommandes;
+
+        return $this;
+    }
+
+    /**
+     * Remove ligneCommandes
+     *
+     * @param \sil18\VitrineBundle\Entity\LigneCommande $ligneCommandes
+     */
+    public function removeLigneCommande(\sil18\VitrineBundle\Entity\LigneCommande $ligneCommandes)
+    {
+        $this->ligneCommandes->removeElement($ligneCommandes);
+    }
+
+    /**
+     * Get ligneCommandes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getLigneCommandes()
+    {
+        return $this->ligneCommandes;
+    }
+    
+    public function __toString() {
+        return $this->getId();
+    }
 }

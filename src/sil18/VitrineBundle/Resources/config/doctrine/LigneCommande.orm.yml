@@ -6,8 +6,9 @@ sil18\VitrineBundle\Entity\LigneCommande:
             type: integer
             generator: { strategy: AUTO }
     fields:
-        prix_article:
-            type: integer
+        prixArticle:
+            type: decimal
+            length: 2
             
         quantite:
             type: integer

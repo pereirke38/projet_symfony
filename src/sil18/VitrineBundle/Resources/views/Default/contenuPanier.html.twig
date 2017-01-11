@@ -1,0 +1,26 @@
+    {% if panier.getContenu()|length != 0 %}
+        <table class='table table-hover'>
+            <tr>
+                <th>Name</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Total</th>
+            </tr>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.name }}</td>
+                <td>{{ article.price }}</td>
+            {% for articleId, qte in panier.getContenu() %}
+                {% if articleId == article.id %}
+                    <td>{{ qte }}</td>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+                <td>{{ total }}</td>
+             </tr>    
+        </table>
+    {% else %}
+        <p>Panier vide</p>
+    {% endif %}
+    <a href="{{ url('viderPanier') }}">Vider le panier</a>
+    <a href="{{ url('validationPanier') }}">Valider le panier</a>

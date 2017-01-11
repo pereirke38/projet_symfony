@@ -20,7 +20,7 @@ class Article
     private $name;
 
     /**
-     * @var string
+     * @var integer
      */
     private $price;
 
@@ -61,7 +61,7 @@ class Article
     /**
      * Get name
      *
-     * @return string 
+     * @return integer 
      */
     public function getName()
     {
@@ -71,7 +71,7 @@ class Article
     /**
      * Set price
      *
-     * @param string $price
+     * @param integer $price
      * @return Article
      */
     public function setPrice($price)
@@ -135,5 +135,33 @@ class Article
     public function getManyToOne()
     {
         return $this->manyToOne;
+    }
+    /**
+     * @var \sil18\VitrineBundle\Entity\CategorieArticle
+     */
+    private $categorieArticle;
+
+
+    /**
+     * Set categorieArticle
+     *
+     * @param \sil18\VitrineBundle\Entity\CategorieArticle $categorieArticle
+     * @return Article
+     */
+    public function setCategorieArticle(\sil18\VitrineBundle\Entity\CategorieArticle $categorieArticle = null)
+    {
+        $this->categorieArticle = $categorieArticle;
+
+        return $this;
+    }
+
+    /**
+     * Get categorieArticle
+     *
+     * @return \sil18\VitrineBundle\Entity\CategorieArticle 
+     */
+    public function getCategorieArticle()
+    {
+        return $this->categorieArticle;
     }
 }

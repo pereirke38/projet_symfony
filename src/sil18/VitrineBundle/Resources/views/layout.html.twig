@@ -26,19 +26,24 @@
                   <li class="active"><a href="{{ url('accueil') }}">Acceuil <span class="sr-only">(current)</span></a></li>
                   <li><a href="{{ url('mentions') }}">Mentions</a></li>
                   <li><a href="{{ url('catalogue') }}">Catalogue</a></li>
+                  <li><a href="{{ url('client_index') }}">Client</a></li>
+                  <li><a href="{{ url('commande_index') }}">Commandes</a></li>
+                  <li><a href="{{ url('client_login') }}">Login</a></li>
                 </ul>
             </div><!-- /.container-fluid -->
         </nav>
         <div class="row">
-            <div class="col-xs-12" id="content">
+            <div class="col-xs-8" id="content">
                 {% block content %}
                 {% endblock %}
             </div>
+            <div class="col-xs-4">
+                {{ render(controller('sil18VitrineBundle:Panier:contenuPanier')) }}
+            </div>
         </div>
-        
         <footer>
             {% block footer %}
             {% endblock %}
-        </footer>
+        </footer> 
     </body>
 </html>

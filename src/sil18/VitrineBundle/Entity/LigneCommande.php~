@@ -20,7 +20,7 @@ class LigneCommande
     private $quantite;
 
     /**
-     * @var \sil18\VitrineBundle\Entity\Article
+     * @var string
      */
     private $prixArticle;
 
@@ -71,10 +71,10 @@ class LigneCommande
     /**
      * Set prixArticle
      *
-     * @param \sil18\VitrineBundle\Entity\Article $prixArticle
+     * @param string prixArticle
      * @return LigneCommande
      */
-    public function setPrixArticle(\sil18\VitrineBundle\Entity\Article $prixArticle = null)
+    public function setPrixArticle($prixArticle = null)
     {
         $this->prixArticle = $prixArticle;
 
@@ -84,7 +84,7 @@ class LigneCommande
     /**
      * Get prixArticle
      *
-     * @return \sil18\VitrineBundle\Entity\Article 
+     * @return string
      */
     public function getPrixArticle()
     {
@@ -136,4 +136,5 @@ class LigneCommande
     {
         return $this->article;
     }
+
 }
