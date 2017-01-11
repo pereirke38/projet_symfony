@@ -1,0 +1,51 @@
+{% extends 'sil18VitrineBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1>Commande</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ commande.id }}</td>
+            </tr>
+            <tr>
+                <th>Datecommande</th>
+                <td>{% if commande.dateCommande %}{{ commande.dateCommande|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Valilde</th>
+                <td>{% if commande.valilde %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Detail de la commande</h2>
+        <table class="table">
+            <tr>
+                <th>Nom Article</th>
+                <th>Quantitie</th>
+                <th>Prix article</th>
+            </tr>
+            
+            {% for detail in listeCommandes %}
+            <tr>
+                <td>{{ detail.article.name }}</td>
+                <td>{{ detail.quantite }}</td>
+                <td>{{ detail.prixArticle }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    <ul>
+        <li>
+            <a href="{{ path('commande_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('commande_edit', { 'id': commande.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

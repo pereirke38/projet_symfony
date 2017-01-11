@@ -18,8 +18,8 @@ class __TwigTemplate_785114eb720b83279789185d4e012533d73a6e5b3646390c06e1301d39d
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_de063b959cea2df69bc5ddf0b168f4e1ce53be708447080926a7f0c08d26a5e0 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_de063b959cea2df69bc5ddf0b168f4e1ce53be708447080926a7f0c08d26a5e0->enter($__internal_de063b959cea2df69bc5ddf0b168f4e1ce53be708447080926a7f0c08d26a5e0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "sil18VitrineBundle::layout.html.twig"));
+        $__internal_996737773fe830fb791f0e8da692c0730c3976d629ea4c66e235bc43cdd36edc = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_996737773fe830fb791f0e8da692c0730c3976d629ea4c66e235bc43cdd36edc->enter($__internal_996737773fe830fb791f0e8da692c0730c3976d629ea4c66e235bc43cdd36edc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "sil18VitrineBundle::layout.html.twig"));
 
         // line 1
         echo "<!doctype html>
@@ -40,75 +40,111 @@ class __TwigTemplate_785114eb720b83279789185d4e012533d73a6e5b3646390c06e1301d39d
         echo "\"></script>
     </head>
     <body>
-        <nav class=\"btn-group\">
-            <ul class=\"nav navbar-default nav-pills\">
-                <li><a href=\"";
-        // line 12
+        <nav class=\"navbar navbar-default\">
+            <div class=\"container-fluid\">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class=\"navbar-header\">
+                <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">
+                  <span class=\"sr-only\">Toggle navigation</span>
+                  <span class=\"icon-bar\"></span>
+                  <span class=\"icon-bar\"></span>
+                  <span class=\"icon-bar\"></span>
+                </button>
+                <a class=\"navbar-brand\" href=\"#\">Brand</a>
+              </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
+                <ul class=\"nav navbar-nav\">
+                  <li class=\"active\"><a href=\"";
+        // line 26
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getUrl("accueil");
-        echo "\">Accueil</a></li>
-                <li><a href=\"";
-        // line 13
+        echo "\">Acceuil <span class=\"sr-only\">(current)</span></a></li>
+                  <li><a href=\"";
+        // line 27
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getUrl("mentions");
         echo "\">Mentions</a></li>
-            </ul>
+                  <li><a href=\"";
+        // line 28
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getUrl("catalogue");
+        echo "\">Catalogue</a></li>
+                  <li><a href=\"";
+        // line 29
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getUrl("client_index");
+        echo "\">Client</a></li>
+                  <li><a href=\"";
+        // line 30
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getUrl("commande_index");
+        echo "\">Commandes</a></li>
+                  <li><a href=\"";
+        // line 31
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getUrl("client_login");
+        echo "\">Login</a></li>
+                </ul>
+            </div><!-- /.container-fluid -->
         </nav>
         <div class=\"row\">
-            <div class=\"col-xs-12\" id=\"content\">
+            <div class=\"col-xs-8\" id=\"content\">
                 ";
-        // line 18
+        // line 37
         $this->displayBlock('content', $context, $blocks);
-        // line 20
+        // line 39
         echo "            </div>
+            <div class=\"col-xs-4\">
+                ";
+        // line 41
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\HttpKernelExtension')->renderFragment($this->env->getExtension('Symfony\Bridge\Twig\Extension\HttpKernelExtension')->controller("sil18VitrineBundle:Panier:contenuPanier"));
+        echo "
+            </div>
         </div>
-        
         <footer>
             ";
-        // line 24
+        // line 45
         $this->displayBlock('footer', $context, $blocks);
-        // line 26
-        echo "        </footer>
+        // line 47
+        echo "        </footer> 
     </body>
 </html>";
         
-        $__internal_de063b959cea2df69bc5ddf0b168f4e1ce53be708447080926a7f0c08d26a5e0->leave($__internal_de063b959cea2df69bc5ddf0b168f4e1ce53be708447080926a7f0c08d26a5e0_prof);
+        $__internal_996737773fe830fb791f0e8da692c0730c3976d629ea4c66e235bc43cdd36edc->leave($__internal_996737773fe830fb791f0e8da692c0730c3976d629ea4c66e235bc43cdd36edc_prof);
 
     }
 
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        $__internal_9e8924cf1ff6d5d29c60e05945b7bcec08103a472280ec41219e2b42126c716f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_9e8924cf1ff6d5d29c60e05945b7bcec08103a472280ec41219e2b42126c716f->enter($__internal_9e8924cf1ff6d5d29c60e05945b7bcec08103a472280ec41219e2b42126c716f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_910a13d438969201e796ad8465979383b31e383fb29fbfb364f634f2f91d3e46 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_910a13d438969201e796ad8465979383b31e383fb29fbfb364f634f2f91d3e46->enter($__internal_910a13d438969201e796ad8465979383b31e383fb29fbfb364f634f2f91d3e46_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "Projet Symfony";
         
-        $__internal_9e8924cf1ff6d5d29c60e05945b7bcec08103a472280ec41219e2b42126c716f->leave($__internal_9e8924cf1ff6d5d29c60e05945b7bcec08103a472280ec41219e2b42126c716f_prof);
+        $__internal_910a13d438969201e796ad8465979383b31e383fb29fbfb364f634f2f91d3e46->leave($__internal_910a13d438969201e796ad8465979383b31e383fb29fbfb364f634f2f91d3e46_prof);
 
     }
 
-    // line 18
+    // line 37
     public function block_content($context, array $blocks = array())
     {
-        $__internal_77f37a684bc58a223f8e20f23e862c7370f7c52daa4c374156b18d3337767dea = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_77f37a684bc58a223f8e20f23e862c7370f7c52daa4c374156b18d3337767dea->enter($__internal_77f37a684bc58a223f8e20f23e862c7370f7c52daa4c374156b18d3337767dea_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_bcb7f80a2a2c43a66f1662b07e1432d6fa4a99cd6a22f5bc9466c2512ffa72c8 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_bcb7f80a2a2c43a66f1662b07e1432d6fa4a99cd6a22f5bc9466c2512ffa72c8->enter($__internal_bcb7f80a2a2c43a66f1662b07e1432d6fa4a99cd6a22f5bc9466c2512ffa72c8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        // line 19
+        // line 38
         echo "                ";
         
-        $__internal_77f37a684bc58a223f8e20f23e862c7370f7c52daa4c374156b18d3337767dea->leave($__internal_77f37a684bc58a223f8e20f23e862c7370f7c52daa4c374156b18d3337767dea_prof);
+        $__internal_bcb7f80a2a2c43a66f1662b07e1432d6fa4a99cd6a22f5bc9466c2512ffa72c8->leave($__internal_bcb7f80a2a2c43a66f1662b07e1432d6fa4a99cd6a22f5bc9466c2512ffa72c8_prof);
 
     }
 
-    // line 24
+    // line 45
     public function block_footer($context, array $blocks = array())
     {
-        $__internal_c8342b68e5defeeea4c38eadb7e389f386f2ac56f458e41a92f18376e091ddbf = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_c8342b68e5defeeea4c38eadb7e389f386f2ac56f458e41a92f18376e091ddbf->enter($__internal_c8342b68e5defeeea4c38eadb7e389f386f2ac56f458e41a92f18376e091ddbf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
+        $__internal_178f5d023479cba9d9395c4528c5e397eb1ed10c245960ac6f618e51d0df21a4 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_178f5d023479cba9d9395c4528c5e397eb1ed10c245960ac6f618e51d0df21a4->enter($__internal_178f5d023479cba9d9395c4528c5e397eb1ed10c245960ac6f618e51d0df21a4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 25
+        // line 46
         echo "            ";
         
-        $__internal_c8342b68e5defeeea4c38eadb7e389f386f2ac56f458e41a92f18376e091ddbf->leave($__internal_c8342b68e5defeeea4c38eadb7e389f386f2ac56f458e41a92f18376e091ddbf_prof);
+        $__internal_178f5d023479cba9d9395c4528c5e397eb1ed10c245960ac6f618e51d0df21a4->leave($__internal_178f5d023479cba9d9395c4528c5e397eb1ed10c245960ac6f618e51d0df21a4_prof);
 
     }
 
@@ -124,7 +160,7 @@ class __TwigTemplate_785114eb720b83279789185d4e012533d73a6e5b3646390c06e1301d39d
 
     public function getDebugInfo()
     {
-        return array (  109 => 25,  103 => 24,  96 => 19,  90 => 18,  78 => 5,  69 => 26,  67 => 24,  61 => 20,  59 => 18,  51 => 13,  47 => 12,  39 => 7,  35 => 6,  31 => 5,  25 => 1,);
+        return array (  145 => 46,  139 => 45,  132 => 38,  126 => 37,  114 => 5,  105 => 47,  103 => 45,  96 => 41,  92 => 39,  90 => 37,  81 => 31,  77 => 30,  73 => 29,  69 => 28,  65 => 27,  61 => 26,  39 => 7,  35 => 6,  31 => 5,  25 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -146,23 +182,44 @@ class __TwigTemplate_785114eb720b83279789185d4e012533d73a6e5b3646390c06e1301d39d
         <script src=\"{{ asset('js/bootstrap.js') }}\"></script>
     </head>
     <body>
-        <nav class=\"btn-group\">
-            <ul class=\"nav navbar-default nav-pills\">
-                <li><a href=\"{{ url('accueil') }}\">Accueil</a></li>
-                <li><a href=\"{{ url('mentions') }}\">Mentions</a></li>
-            </ul>
+        <nav class=\"navbar navbar-default\">
+            <div class=\"container-fluid\">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class=\"navbar-header\">
+                <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">
+                  <span class=\"sr-only\">Toggle navigation</span>
+                  <span class=\"icon-bar\"></span>
+                  <span class=\"icon-bar\"></span>
+                  <span class=\"icon-bar\"></span>
+                </button>
+                <a class=\"navbar-brand\" href=\"#\">Brand</a>
+              </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
+                <ul class=\"nav navbar-nav\">
+                  <li class=\"active\"><a href=\"{{ url('accueil') }}\">Acceuil <span class=\"sr-only\">(current)</span></a></li>
+                  <li><a href=\"{{ url('mentions') }}\">Mentions</a></li>
+                  <li><a href=\"{{ url('catalogue') }}\">Catalogue</a></li>
+                  <li><a href=\"{{ url('client_index') }}\">Client</a></li>
+                  <li><a href=\"{{ url('commande_index') }}\">Commandes</a></li>
+                  <li><a href=\"{{ url('client_login') }}\">Login</a></li>
+                </ul>
+            </div><!-- /.container-fluid -->
         </nav>
         <div class=\"row\">
-            <div class=\"col-xs-12\" id=\"content\">
+            <div class=\"col-xs-8\" id=\"content\">
                 {% block content %}
                 {% endblock %}
             </div>
+            <div class=\"col-xs-4\">
+                {{ render(controller('sil18VitrineBundle:Panier:contenuPanier')) }}
+            </div>
         </div>
-        
         <footer>
             {% block footer %}
             {% endblock %}
-        </footer>
+        </footer> 
     </body>
 </html>", "sil18VitrineBundle::layout.html.twig", "/home/pereirke/Documents/si15/projet/src/sil18/VitrineBundle/Resources/views/layout.html.twig");
     }

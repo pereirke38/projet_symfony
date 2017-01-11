@@ -105,6 +105,144 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        if (0 === strpos($pathinfo, '/c')) {
+            if (0 === strpos($pathinfo, '/commande')) {
+                // commande_index
+                if (rtrim($pathinfo, '/') === '/commande') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_commande_index;
+                    }
+
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'commande_index');
+                    }
+
+                    return array (  '_controller' => 'sil18\\VitrineBundle\\Controller\\CommandeController::indexAction',  '_route' => 'commande_index',);
+                }
+                not_commande_index:
+
+                // commande_show
+                if (preg_match('#^/commande/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_commande_show;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'commande_show')), array (  '_controller' => 'sil18\\VitrineBundle\\Controller\\CommandeController::showAction',));
+                }
+                not_commande_show:
+
+                // commande_new
+                if ($pathinfo === '/commande/new') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_commande_new;
+                    }
+
+                    return array (  '_controller' => 'sil18\\VitrineBundle\\Controller\\CommandeController::newAction',  '_route' => 'commande_new',);
+                }
+                not_commande_new:
+
+                // commande_edit
+                if (preg_match('#^/commande/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_commande_edit;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'commande_edit')), array (  '_controller' => 'sil18\\VitrineBundle\\Controller\\CommandeController::editAction',));
+                }
+                not_commande_edit:
+
+                // commande_delete
+                if (preg_match('#^/commande/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_commande_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'commande_delete')), array (  '_controller' => 'sil18\\VitrineBundle\\Controller\\CommandeController::deleteAction',));
+                }
+                not_commande_delete:
+
+            }
+
+            if (0 === strpos($pathinfo, '/client')) {
+                // client_index
+                if (rtrim($pathinfo, '/') === '/client') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_client_index;
+                    }
+
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'client_index');
+                    }
+
+                    return array (  '_controller' => 'sil18\\VitrineBundle\\Controller\\ClientController::indexAction',  '_route' => 'client_index',);
+                }
+                not_client_index:
+
+                // client_show
+                if (preg_match('#^/client/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_client_show;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'client_show')), array (  '_controller' => 'sil18\\VitrineBundle\\Controller\\ClientController::showAction',));
+                }
+                not_client_show:
+
+                // client_new
+                if ($pathinfo === '/client/new') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_client_new;
+                    }
+
+                    return array (  '_controller' => 'sil18\\VitrineBundle\\Controller\\ClientController::newAction',  '_route' => 'client_new',);
+                }
+                not_client_new:
+
+                // client_edit
+                if (preg_match('#^/client/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_client_edit;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'client_edit')), array (  '_controller' => 'sil18\\VitrineBundle\\Controller\\ClientController::editAction',));
+                }
+                not_client_edit:
+
+                // client_delete
+                if (preg_match('#^/client/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_client_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'client_delete')), array (  '_controller' => 'sil18\\VitrineBundle\\Controller\\ClientController::deleteAction',));
+                }
+                not_client_delete:
+
+                // client_login
+                if ($pathinfo === '/client/login') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_client_login;
+                    }
+
+                    return array (  '_controller' => 'sil18\\VitrineBundle\\Controller\\ClientController::loginAction',  '_route' => 'client_login',);
+                }
+                not_client_login:
+
+            }
+
+        }
+
         // sil18_vitrine_homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
@@ -122,6 +260,39 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         // mentions
         if ($pathinfo === '/mentions') {
             return array (  '_controller' => 'sil18\\VitrineBundle\\Controller\\DefaultController::mentionsAction',  '_route' => 'mentions',);
+        }
+
+        // catalogue
+        if ($pathinfo === '/catalogue') {
+            return array (  '_controller' => 'sil18\\VitrineBundle\\Controller\\DefaultController::catalogueAction',  '_route' => 'catalogue',);
+        }
+
+        // articlesParCategorie
+        if (0 === strpos($pathinfo, '/articlesParCategorie') && preg_match('#^/articlesParCategorie(?:/(?P<categorie_id>[^/]++))?$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'articlesParCategorie')), array (  '_controller' => 'sil18\\VitrineBundle\\Controller\\DefaultController::articlesParCategorieAction',  'categorie_id' => 'categorie_id',));
+        }
+
+        // contenuPanier
+        if ($pathinfo === '/contenuPanier') {
+            return array (  '_controller' => 'sil18\\VitrineBundle\\Controller\\PanierController::contenuPanierAction',  '_route' => 'contenuPanier',);
+        }
+
+        // ajoutArticle
+        if (0 === strpos($pathinfo, '/ajoutArticle') && preg_match('#^/ajoutArticle/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'ajoutArticle')), array (  '_controller' => 'sil18\\VitrineBundle\\Controller\\PanierController::ajoutArticleAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/v')) {
+            // viderPanier
+            if ($pathinfo === '/viderPanier') {
+                return array (  '_controller' => 'sil18\\VitrineBundle\\Controller\\PanierController::viderPanierAction',  '_route' => 'viderPanier',);
+            }
+
+            // validationPanier
+            if ($pathinfo === '/validationPanier') {
+                return array (  '_controller' => 'sil18\\VitrineBundle\\Controller\\PanierController::validationPanierAction',  '_route' => 'validationPanier',);
+            }
+
         }
 
         // homepage
